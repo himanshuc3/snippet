@@ -11,7 +11,7 @@ class Snippet extends Component {
         }
     }
 
-    render() {return (
+    render() { return (
             <h1>Hello snippet</h1>
         )
     }
