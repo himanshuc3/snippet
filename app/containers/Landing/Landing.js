@@ -48,6 +48,7 @@ const ShowCase = styled.div`
 	align-items: center;
 `;
 
+/* eslint-disable-next-line */
 const GithubImage = styled.img``;
 
 const LaptopImg = styled.img`
@@ -96,7 +97,7 @@ class Landing extends Component {
 	}
 
 	render() {
-		let menuItems = [
+		const menuItems = [
 			{
 				name: 'feature1',
 				href: '/#'
@@ -121,19 +122,19 @@ class Landing extends Component {
 						<UnorderedList>
 							{menuItems.map((item, index) => {
 								return (
-									<li key={index}>
+									<li key={name}>
 										<A href={item.href}>{item.name}</A>
 									</li>
 								);
 							})}
 						</UnorderedList>
 						<span>
-							<img src={github} />
+							<img src={github} alt="fork this project" />
 						</span>
 					</Header>
 					<Hero>
 						<h1>
-							<img src={logo} />
+							<img src={logo} alt="laptop image with animating code" />
 							snippet
 						</h1>
 						<h3>

@@ -1,7 +1,7 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 
 const UL = styled.ul`
-    list-style:none;
-`
+	list-style: none;
+`;
 
-export default UL
+export default UL;

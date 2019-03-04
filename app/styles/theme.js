@@ -1,16 +1,11 @@
 const theme = {
-    colors:{
-        primary: '#9800D0',
-        secondary: '#0ED8B2',
-        blackShade: '#242424'
-    },
-    fontSize:{
+	colors: {
+		primary: '#9800D0',
+		secondary: '#0ED8B2',
+		blackShade: '#242424'
+	},
+	fontSize: {},
+	fonts: {}
+};
 
-    },
-    fonts:{
-
-    },
-
-}
-
-export default theme
+export default theme;

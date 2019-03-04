@@ -1,26 +1,28 @@
-import React, {Component} from 'react'
+/* eslint-disable */
 
-class ErrorBoundary extends Component{
-    state ={
-        hasError: false,
-        errorMessage: ''
-    }
+import React, { Component } from 'react';
 
-    componentDidCatch = (err,info)=> {
-        this.setState({
-            hasError: true,
-            errorMessage: err
-        })
-    }
+class ErrorBoundary extends Component {
+	state = {
+		hasError: false,
+		errorMessage: ''
+	};
 
-    render(){
-        // Not shown in development mode
-        if(this.state.hasError){
-            return <h1>Some error occured: ${this.state.errorMessage}</h1>
-        }else{
-            return this.props.children
-        }
-    }
+	componentDidCatch = (err, info) => {
+		this.setState({
+			hasError: true,
+			errorMessage: err
+		});
+	};
+
+	render() {
+		// Not shown in development mode
+		if (this.state.hasError) {
+			return <h1>Some error occured: ${this.state.errorMessage}</h1>;
+		} else {
+			return this.props.children;
+		}
+	}
 }
 
-export default ErrorBoundary
+export default ErrorBoundary;
