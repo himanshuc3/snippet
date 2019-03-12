@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="23px" viewBox="0 0 12 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dashboard-2" transform="translate(-868.000000, -24.000000)" fill="#FFFFFF">
+            <g id="twitter" transform="translate(850.000000, 14.000000)">
+                <g id="Group-2">
+                    <g id="fb" transform="translate(18.000000, 10.000000)">
+                        <path d="M2.48648649,23 L2.51718102,12.1391729 L0,12.1391729 L0,7.95386837 L2.51718102,7.95386837 L2.51718102,5.44319698 C2.51718102,2.03129168 3.73244986,0 7.77027027,0 L11.5,0 L11.5,4.15277778 L9.23722283,4.15277778 C7.66492959,4.15277778 7.56036201,4.76950867 7.56036201,5.8612161 L7.55406275,7.95386837 L11.3613306,7.95386837 L10.9153435,12.1391729 L7.55406275,12.1391729 L7.55406275,23 L2.48648649,23 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

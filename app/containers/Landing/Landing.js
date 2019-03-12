@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import styled from '@emotion/styled';
 import { A, theme } from '../../styles/index';
 import github from '../../assets/github.svg';
 import logo from '../../assets/logo.svg';
 import laptop from '../../assets/laptop.svg';
+import Modal from '../../components/Modal/Modal';
+import Preview from '../../components/Preview/Preview';
 
 const Container = styled.div`
 	// background: black;
@@ -90,11 +92,21 @@ const GetStartedButton = styled.button`
 	transform: rotate(20deg);
 `;
 
-class Landing extends Component {
+class Landing extends PureComponent {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			show: false
+		};
 	}
+
+	toggleModal = () => {
+		this.setState(prevState => {
+			return {
+				show: !prevState.show
+			};
+		});
+	};
 
 	render() {
 		const menuItems = [
@@ -117,6 +129,9 @@ class Landing extends Component {
 		];
 		return (
 			<Container>
+				<Modal show={this.state.show} modalClose={this.toggleModal}>
+					<Preview />
+				</Modal>
 				<Content>
 					<Header>
 						<UnorderedList>
@@ -144,7 +159,7 @@ class Landing extends Component {
 					<ShowCase>
 						<LaptopImg src={laptop} />
 						<GetStartedSpan>
-							<GetStartedButton>Get Started</GetStartedButton>
+							<GetStartedButton onClick={this.toggleModal}>Get Started</GetStartedButton>
 						</GetStartedSpan>
 					</ShowCase>
 				</Content>
