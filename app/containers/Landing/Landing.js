@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 import { A, theme } from '../../styles/index';
 import github from '../../assets/github.svg';
 import logo from '../../assets/logo.svg';
@@ -138,7 +139,7 @@ class Landing extends PureComponent {
 							{menuItems.map((item, index) => {
 								return (
 									<li key={name}>
-										<A href={item.href}>{item.name}</A>
+										<Link to={item.href}>{item.name}</Link>
 									</li>
 								);
 							})}
