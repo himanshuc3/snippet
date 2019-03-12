@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Backdrop from '../Backdrop/Backdrop';
-import Aux from '../../containers/Aux/Aux';
 
 const ModalWrapper = styled.div`
 	position: fixed;
@@ -17,10 +16,10 @@ const ModalWrapper = styled.div`
 `;
 
 const Modal = props => (
-	<Aux>
+	<React.Fragment>
 		<Backdrop show={props.show} clicked={props.modalClose} />
 		<ModalWrapper show={props.show}>{props.children}</ModalWrapper>
-	</Aux>
+	</React.Fragment>
 );
 
 export default Modal;

@@ -1,12 +1,11 @@
 import React from 'react';
-import Aux from '../../containers/Aux/Aux';
 
 const Preview = props => {
 	return (
-		<Aux>
+		<React.Fragment>
 			<h1>Preview Image:</h1>
 			<button>Download image</button>
-		</Aux>
+		</React.Fragment>
 	);
 };
 

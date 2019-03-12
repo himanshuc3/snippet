@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from '@emotion/styled';
-import Aux from '../Aux/Aux';
 import PropTypes from 'prop-types';
 import Logo from '../../assets/logo.svg';
 import twitterLogo from '../../assets/twitter.svg';
@@ -48,7 +47,7 @@ class Snippet extends Component {
 		];
 
 		return (
-			<Aux>
+			<React.Fragment>
 				<Header>
 					<div>
 						<LogoImg src={Logo} />
@@ -67,7 +66,7 @@ class Snippet extends Component {
 					</div>
 				</Header>
 				<Menu />
-			</Aux>
+			</React.Fragment>
 		);
 	}
 }
