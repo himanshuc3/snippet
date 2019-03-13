@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import Logo from '../../assets/logo.svg';
@@ -6,10 +7,11 @@ import twitterLogo from '../../assets/twitter.svg';
 import facebookLogo from '../../assets/facebook.svg';
 import githubLogo from '../../assets/github.svg';
 import Menu from '../../components/Menu/Menu';
+import Options from '../../components/Options/Options';
 
 const Header = styled.header`
 	width: 100%;
-	height: 40px;
+	// height: 40px;
 	background: red;
 `;
 
@@ -66,11 +68,18 @@ class Snippet extends Component {
 					</div>
 				</Header>
 				<Menu />
+				<Options />
 			</React.Fragment>
 		);
 	}
 }
 
 Snippet.propTypes = {};
+
+// const mapStateToProps = (state) => {
+// 	return {
+
+// 	}
+// }
 
 export default Snippet;

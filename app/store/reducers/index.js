@@ -1,6 +1,10 @@
-import loading from './loading'
-import { combineReducers} from 'redux'
+import loading from './loading';
+import option from './option';
+import { combineReducers } from 'redux';
 
-const rootReducer = combineReducers({loading})
+const rootReducer = combineReducers({
+	loading,
+	option
+});
 
 export default rootReducer;
