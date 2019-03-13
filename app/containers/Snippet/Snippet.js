@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from '@emotion/styled';
+import AceEditor from 'react-ace';
 import PropTypes from 'prop-types';
+var CodeMirror = require('react-codemirror');
+import brace from 'brace';
+import 'brace/mode/javascript';
+import 'brace/theme/monokai';
+import 'brace/mode/jsx';
 import Logo from '../../assets/logo.svg';
 import twitterLogo from '../../assets/twitter.svg';
 import facebookLogo from '../../assets/facebook.svg';
 import githubLogo from '../../assets/github.svg';
 import Menu from '../../components/Menu/Menu';
 import Options from '../../components/Options/Options';
+
+require('codemirror/mode/javascript/javascript');
+require('codemirror/mode/xml/xml');
+require('codemirror/mode/markdown/markdown');
+require('code-mirror-themes/themes/toulousse-lautrec.css');
+
+import 'codemirror/theme/night.css';
 
 const Header = styled.header`
 	width: 100%;
@@ -69,17 +82,23 @@ class Snippet extends Component {
 				</Header>
 				<Menu />
 				<Options />
+				<AceEditor
+					mode="javascript"
+					theme="monokai"
+					name="UNIQUE_ID_OF_DIV"
+					editorProps={{ $blockScrolling: true }}
+				/>
+				<CodeMirror
+					ref="editor"
+					value="hell"
+					options={{ mode: 'javascript', theme: 'toulousse-lautrec' }}
+					autoFocus={true}
+				/>
 			</React.Fragment>
 		);
 	}
 }
 
 Snippet.propTypes = {};
-
-// const mapStateToProps = (state) => {
-// 	return {
-
-// 	}
-// }
 
 export default Snippet;
