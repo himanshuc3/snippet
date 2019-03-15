@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import styled from '@emotion/styled';
 import AceEditor from 'react-ace';
 import PropTypes from 'prop-types';
-var CodeMirror = require('react-codemirror');
 import brace from 'brace';
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
@@ -14,13 +13,7 @@ import facebookLogo from '../../assets/facebook.svg';
 import githubLogo from '../../assets/github.svg';
 import Menu from '../../components/Menu/Menu';
 import Options from '../../components/Options/Options';
-
-require('codemirror/mode/javascript/javascript');
-require('codemirror/mode/xml/xml');
-require('codemirror/mode/markdown/markdown');
-require('code-mirror-themes/themes/toulousse-lautrec.css');
-
-import 'codemirror/theme/night.css';
+import EditorDisplay from '../../components/EditorDisplay/EditorDisplay';
 
 const Header = styled.header`
 	width: 100%;
@@ -44,7 +37,9 @@ const ShareIcon = styled.img`
 class Snippet extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			code: 'Hello world'
+		};
 	}
 
 	render() {
@@ -82,18 +77,7 @@ class Snippet extends Component {
 				</Header>
 				<Menu />
 				<Options />
-				<AceEditor
-					mode="javascript"
-					theme="monokai"
-					name="UNIQUE_ID_OF_DIV"
-					editorProps={{ $blockScrolling: true }}
-				/>
-				<CodeMirror
-					ref="editor"
-					value="hell"
-					options={{ mode: 'javascript', theme: 'toulousse-lautrec' }}
-					autoFocus={true}
-				/>
+				<EditorDisplay />
 			</React.Fragment>
 		);
 	}
