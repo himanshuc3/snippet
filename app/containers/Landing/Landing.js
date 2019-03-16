@@ -131,6 +131,51 @@ class Landing extends PureComponent {
 		];
 		return (
 			<Container>
+				<Helmet>
+					{/* <meta charSet="utf-8" /> */}
+					{/* <title>Snippet | Minimal Screenshots for code.</title> */}
+					<meta
+						name="description"
+						content="Take minimal screenshots of code with different flavours of font, background and themes. Instagram code pics."
+					/>
+					{/* Full screen view of website on mobile. */}
+					<meta name="apple-mobile-web-app-capable" content="yes" />
+					<meta name="apple-mobile-web-app-title" content="Snippet" />
+					{/* Facebok opengraph tags */}
+					<meta property="og:url" content="www.snippet.com" />
+					<meta property="og:type" content="website" />
+					<meta property="og:title" content="Minimal screenshots of code." />
+					<meta property="og:image" content="imagelink" />
+					{/* 1200*630 */}
+					<meta property="og:image:type" content="image/jpeg" />
+					<meta property="og:image:width" content="500" />
+					<meta property="og:image:height" content="400" />
+
+					{/* Twitter cards */}
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta name="twitter:site" content="@Snippet" />
+					<meta name="twitter:creator" content="@HimanshuChhabra" />
+					{/* 560*300 */}
+					<meta name="twitter:image" content="imageLink" />
+					{/* Schema breadcrumb on google. TO-DO. failed to compile. */}
+					{/* <script type="application/ld+json">
+					{
+					"@context": "https://schema.org",
+					"@type": "BreadcrumbList",
+					"itemListElement": [{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Home",
+						"item": "https://snippet.com/"
+					},{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Editor",
+						"item": "https://snippet.com/main"
+					}]
+					}
+					</script> */}
+				</Helmet>
 				<Modal show={this.state.show} modalClose={this.toggleModal}>
 					<Preview />
 				</Modal>
