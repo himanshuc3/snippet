@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from '@emotion/styled';
+import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { A, theme } from '../../styles/index';
 import github from '../../assets/github.svg';
