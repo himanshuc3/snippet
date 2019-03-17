@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 import { Redirect } from 'react-router';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
@@ -9,6 +10,7 @@ import logo from '../../assets/logo.svg';
 import laptop from '../../assets/laptop.svg';
 import Modal from '../../components/Modal/Modal';
 import Preview from '../../components/Preview/Preview';
+import github2 from '../../assets/forkmegithub.svg';
 
 const Container = styled.div`
 	// background: black;
@@ -17,6 +19,10 @@ const Container = styled.div`
 	position: relative;
 	display: flex;
 	flex-direction: column;
+`;
+
+const topLinks = css`
+	font-size: 8px;
 `;
 
 const Content = styled.div`
@@ -29,19 +35,19 @@ const Header = styled.header`
 	justify-content: space-around;
 	padding: 20px 0;
 
-	&:after {
-		content: '';
-		width: 80%;
-		height: 400px;
-		background: ${theme.colors.secondary};
-		border-bottom-right-radius: 20px;
-		transform: rotate(-10deg);
-		opacity: 0.5;
-		position: absolute;
-		z-index: 100;
-		top: -40%;
-		left: -10%;
-	}
+	// &:after {
+	// 	content: '';
+	// 	width: 80%;
+	// 	height: 400px;
+	// 	background: ${theme.colors.secondary};
+	// 	border-bottom-right-radius: 20px;
+	// 	transform: rotate(-10deg);
+	// 	opacity: 0.5;
+	// 	position: absolute;
+	// 	z-index: 100;
+	// 	top: -40%;
+	// 	left: -10%;
+	// }
 `;
 
 const ShowCase = styled.div`
@@ -54,7 +60,13 @@ const ShowCase = styled.div`
 `;
 
 /* eslint-disable-next-line */
-const GithubImage = styled.img``;
+const GithubImage = styled.img`
+	src: ${props => props.src};
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100px;
+`;
 
 const LaptopImg = styled.img`
 	width: 600px;
@@ -198,14 +210,14 @@ class Landing extends PureComponent {
 							{menuItems.map((item, index) => {
 								return (
 									<li key={name}>
-										<Link to={item.href}>{item.name}</Link>
+										<A href={item.href} css={topLinks}>
+											{item.name}
+										</A>
 									</li>
 								);
 							})}
 						</UnorderedList>
-						<span>
-							<img src={github} alt="fork this project" />
-						</span>
+						<GithubImage src={github2} alt="fork this project" />
 					</Header>
 					<Hero>
 						<h1>
