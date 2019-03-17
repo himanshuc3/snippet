@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from '@emotion/styled';
+import { Redirect } from 'react-router';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { A, theme } from '../../styles/index';
@@ -102,12 +103,24 @@ class Landing extends PureComponent {
 		};
 	}
 
+	componentDidMount() {
+		document.addEventListener('keypress', this.handleKeyEvent);
+	}
+
 	toggleModal = () => {
 		this.setState(prevState => {
 			return {
 				show: !prevState.show
 			};
 		});
+	};
+
+	handleKeyEvent = e => {
+		console.log(e);
+		let { charCode } = e;
+		if (charCode === 83 || charCode == 115) {
+			this.props.history.push('/main');
+		}
 	};
 
 	render() {
