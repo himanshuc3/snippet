@@ -5,13 +5,15 @@ import { Redirect } from 'react-router';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { A, theme } from '../../styles/index';
+import Header from '../../components/Landing/Header/Header';
+import Hero from '../../components/Landing/Hero/Hero';
 import github from '../../assets/github.svg';
-import logo from '../../assets/logo.svg';
 import laptop from '../../assets/laptop.svg';
 import Modal from '../../components/Modal/Modal';
 import Preview from '../../components/Preview/Preview';
 import github2 from '../../assets/forkmegithub.svg';
 
+// CSS Starting ----
 const Container = styled.div`
 	// background: black;
 	width: 100vw;
@@ -30,44 +32,6 @@ const Content = styled.div`
 	flex: 1 0 auto;
 `;
 
-const Header = styled.header`
-	// background: red;
-	display: flex;
-	width: 90%;
-	margin: 0 auto;
-	justify-content: flex-start;
-	padding: 20px 0;
-
-	// &:after {
-	// 	content: '';
-	// 	width: 80%;
-	// 	height: 400px;
-	// 	background: ${theme.colors.secondary};
-	// 	border-bottom-right-radius: 20px;
-	// 	transform: rotate(-10deg);
-	// 	opacity: 0.5;
-	// 	position: absolute;
-	// 	z-index: 100;
-	// 	top: -40%;
-	// 	left: -10%;
-	// }
-`;
-
-const HeroSection1 = styled.section`
-	// background: blue;
-	justify-content: center;
-	display: flex;
-	align-items: center;
-	position: relative;
-	font-size: 5rem;
-	font-family: 'Fira Sans Condensed', sans-serif;
-	color: #9800d0;
-
-	& span {
-		position: relative;
-	}
-`;
-
 const ShowCase = styled.div`
 	display: flex;
 	width: 90%;
@@ -78,54 +42,9 @@ const ShowCase = styled.div`
 	align-items: center;
 `;
 
-/* eslint-disable-next-line */
-const GithubImage = styled.img`
-	src: ${props => props.src};
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 100px;
-`;
-
 const LaptopImg = styled.img`
 	width: 800px;
 	src: url(${props => props.src});
-`;
-
-const Hero = styled.div`
-	width: 60%;
-	// background: yellow;
-	margin: 0 auto;
-	& h1 {
-		text-align: center;
-	}
-	& > h3 {
-		text-align: center;
-		font-family: 'Overpass', sans-serif;
-		font-weight: 600;
-		font-size: 1.8rem;
-		color: #0ed8b2;
-	}
-`;
-
-const LogoImg = styled.img`
-	src: ${props => props.src};
-	left: -100px;
-	position: absolute;
-`;
-
-const UnorderedList = styled.ul`
-	display: flex;
-	font-size: 30px;
-	list-style-type: none;
-	// background: green;
-
-	& > li > a {
-		font-family: 'Overpass', sans-serif;
-		font-weight: 900;
-		font-size: 1.5rem;
-		margin-right: 2rem;
-	}
 `;
 
 const Footer = styled.footer`
@@ -162,6 +81,7 @@ const FixedBottomBG = styled.div`
 	opacity: 0.2;
 	transform: rotate(-5deg);
 `;
+// CSS end ----
 
 class Landing extends PureComponent {
 	constructor(props) {
@@ -192,32 +112,6 @@ class Landing extends PureComponent {
 	};
 
 	render() {
-		const menuItems = [
-			{
-				name: 'Like my work? hire me.',
-				href: '/#',
-				styles: {
-					borderBottom: '5px solid #9800D0'
-				}
-			},
-			{
-				name: 'resources.',
-				href: '/#',
-				styles: {}
-			},
-			{
-				name: 'support.',
-				href: '/#',
-				styles: {}
-			},
-			{
-				name: 'v1.0.0',
-				href: '/#',
-				styles: {
-					borderBottom: '5px solid #000'
-				}
-			}
-		];
 		return (
 			<Container>
 				<Helmet>
@@ -269,32 +163,8 @@ class Landing extends PureComponent {
 					<Preview />
 				</Modal>
 				<Content>
-					<Header>
-						<UnorderedList>
-							{menuItems.map((item, index) => {
-								return (
-									<li key={name}>
-										<A href={item.href} style={item.styles}>
-											{item.name}
-										</A>
-									</li>
-								);
-							})}
-						</UnorderedList>
-						<GithubImage src={github2} alt="fork this project" />
-					</Header>
-					<Hero>
-						<HeroSection1>
-							<span>
-								<LogoImg src={logo} alt="laptop image with animating code" />
-								snippet
-							</span>
-						</HeroSection1>
-						<h3>
-							Create minimal code snippet snapshots <br /> with variety of customizations &
-							languages available .
-						</h3>
-					</Hero>
+					<Header />
+					<Hero />
 					<ShowCase>
 						<LaptopImg src={laptop} />
 						<GetStartedSpan>
