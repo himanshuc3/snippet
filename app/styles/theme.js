@@ -2,13 +2,15 @@ const theme = {
 	colors: {
 		primary: '#9800D0',
 		secondary: '#0ED8B2',
-		blackShade: '#242424'
+		blackShade: '#242424',
+		brownish: '#3E3E3E'
 	},
 	fonts: {
 		title: 'Fira Sans Condensed, Helvetica Neue, sans-serif',
 		para: 'Overpass, Helvetica Neue, sans-serif'
 	},
 	fontSize: {
+		xxsmall: '0.75rem', // 12px
 		xsmall: '1rem', // 16px
 		small: '1.25rem', // 20px,
 		large: '1.8125rem' // 29px

@@ -1,10 +1,51 @@
 import React, { Component } from 'react';
+import styled from '@emotion/styled';
 import { connect } from 'react-redux';
 import html2canvas from 'html2canvas';
+import { saveAs } from 'file-saver';
 import domToImage from 'dom-to-image';
+import { theme } from '../../styles';
 import heartLogo from '../../assets/heart.svg';
 import downloadLogo from '../../assets/download.svg';
 import { changeOption } from '../../store/actions/option';
+
+// CSS starts---
+const Wrapper = styled.div`
+	display: flex;
+	padding: 10px 2.5%;
+	justify-content: space-between;
+	border-bottom: 1px solid black;
+`;
+
+const UnorderedList = styled.ul`
+	& > li {
+		display: inline-block;
+		margin-right: 80px;
+	}
+
+	& > li > button {
+		font-family: ${theme.fonts.para};
+		font-size: ${theme.fontSize.xsmall};
+		font-weight: 900;
+		padding: 2px 10px;
+		border-radius: 5px;
+	}
+
+	& > li > button:hover {
+		cursor: pointer;
+		background: ${theme.colors.blackShade};
+		color: white;
+		transition: ${theme.transition};
+	}
+`;
+
+const Utilities = styled.div`
+	background: red;
+	// display: flex;
+	// align-items: center;
+`;
+
+// CSS ends---
 
 class Menu extends Component {
 	constructor(props) {
@@ -20,30 +61,43 @@ class Menu extends Component {
 		// 	document.getElementById('showcanvas').innerHTML = '';
 		// 	document.getElementById('showcanvas').append(canvas);
 		// });
-		domToImage.toPng(document.getElementsByClassName('editor-display')[0]).then(dataUrl => {
-			console.log(dataUrl);
+		domToImage.toBlob(document.getElementsByClassName('editor-display')[0]).then(blob => {
+			saveAs(blob, 'artboard.png');
 		});
 	};
 
 	render() {
+		let activeStyle = {
+			background: theme.colors.blackShade,
+			color: 'white'
+		};
 		let menuItems = Object.keys(this.props.options).map((item, index) => {
 			return (
 				<li key={item}>
-					<button onClick={() => this.handleClick(item)}>{item}</button>
+					<button
+						style={
+							this.props.activeOption === item ? activeStyle : { transition: theme.transition }
+						}
+						onClick={() => this.handleClick(item)}
+					>
+						{item}
+					</button>
 				</li>
 			);
 		});
 
 		return (
-			<div>
-				<ul>{menuItems}</ul>
-				<div>
-					<img src={heartLogo} />
+			<Wrapper>
+				<UnorderedList>{menuItems}</UnorderedList>
+				<Utilities>
+					<button>
+						<img src={heartLogo} />
+					</button>
 					<button onClick={this.handleCanvasDownload}>
 						<img src={downloadLogo} />
 					</button>
-				</div>
-			</div>
+				</Utilities>
+			</Wrapper>
 		);
 	}
 }

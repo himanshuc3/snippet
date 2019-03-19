@@ -7,6 +7,8 @@ import brace from 'brace';
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
 import 'brace/mode/jsx';
+
+import { theme } from '../../styles';
 import Logo from '../../assets/logo.svg';
 import twitterLogo from '../../assets/twitter.svg';
 import facebookLogo from '../../assets/facebook.svg';
@@ -16,22 +18,60 @@ import Options from '../../components/Options/Options';
 import EditorDisplay from '../../components/EditorDisplay/EditorDisplay';
 
 const Header = styled.header`
-	width: 100%;
-	// height: 40px;
-	background: red;
+	border-bottom: 1px solid black;
+
+	// background: red;
+`;
+
+const HeaderInnerWrap = styled.div`
+	width: 95%;
+	margin: 0 auto;
+	padding: 10px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`;
+
+const HeaderLeft = styled.div`
+	display: flex;
+	align-items: center;
+
+	& > span {
+		color: ${theme.colors.primary};
+		font-family: ${theme.fonts.title};
+		font-size: ${theme.fontSize.large};
+		font-weight: 900;
+		padding-left: 10px;
+	}
+`;
+
+const HeaderRight = styled.div`
+	display: flex;
+	align-items: center;
 `;
 
 const LogoImg = styled.img`
 	src: ${props => props.src};
+	height: 30px;
 `;
 
-const ShareContainer = styled.div`
-	border-radius: 5px;
+const ShareContainer = styled.button`
+	display: flex;
+	align-items: center;
+	color: white;
+	font-family: ${theme.fonts.para};
+	border-radius: 3px;
+	font-size: 0.9rem;
+	font-weight: 600;
 	background-color: ${props => props.backgroundColor};
+	margin-right: 10px;
+	padding: 3px 15px;
 `;
 
 const ShareIcon = styled.img`
 	src: ${props => props.src};
+	padding-right: 10px;
+	height: 0.8rem;
 `;
 
 class Snippet extends Component {
@@ -45,12 +85,12 @@ class Snippet extends Component {
 	render() {
 		let share = [
 			{
-				text: 'Share on facebook',
+				text: 'Share on Facebook',
 				logo: facebookLogo,
 				backgroundColor: '#39539D'
 			},
 			{
-				text: 'Share on twitter',
+				text: 'Share on Twitter',
 				logo: twitterLogo,
 				backgroundColor: '#009CF9'
 			}
@@ -59,21 +99,23 @@ class Snippet extends Component {
 		return (
 			<React.Fragment>
 				<Header>
-					<div>
-						<LogoImg src={Logo} />
-						<h1>snippet</h1>
-					</div>
-					<div>
-						{share.map((item, index) => {
-							return (
-								<ShareContainer backgroundColor={item.backgroundColor}>
-									<ShareIcon src={item.logo} />
-									<span>{item.text}</span>
-								</ShareContainer>
-							);
-						})}
-						<LogoImg src={githubLogo} />
-					</div>
+					<HeaderInnerWrap>
+						<HeaderLeft>
+							<LogoImg src={Logo} />
+							<span>snippet</span>
+						</HeaderLeft>
+						<HeaderRight>
+							{share.map((item, index) => {
+								return (
+									<ShareContainer backgroundColor={item.backgroundColor}>
+										<ShareIcon src={item.logo} />
+										<span>{item.text}</span>
+									</ShareContainer>
+								);
+							})}
+							<LogoImg src={githubLogo} />
+						</HeaderRight>
+					</HeaderInnerWrap>
 				</Header>
 				<Menu />
 				<Options />

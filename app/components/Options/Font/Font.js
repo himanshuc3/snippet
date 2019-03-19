@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Font = props => {
-	return <h1>Fonts</h1>;
+	return (
+		<div>
+			<h1>Fonts</h1>
+		</div>
+	);
 };
 
 export default Font;
