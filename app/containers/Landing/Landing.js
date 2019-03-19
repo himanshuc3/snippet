@@ -18,6 +18,7 @@ const Container = styled.div`
 	height: 100vh;
 	position: relative;
 	display: flex;
+	overflow-y: hidden;
 	flex-direction: column;
 `;
 
@@ -32,7 +33,9 @@ const Content = styled.div`
 const Header = styled.header`
 	// background: red;
 	display: flex;
-	justify-content: space-around;
+	width: 90%;
+	margin: 0 auto;
+	justify-content: flex-start;
 	padding: 20px 0;
 
 	// &:after {
@@ -50,12 +53,28 @@ const Header = styled.header`
 	// }
 `;
 
+const HeroSection1 = styled.section`
+	// background: blue;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	position: relative;
+	font-size: 5rem;
+	font-family: 'Fira Sans Condensed', sans-serif;
+	color: #9800d0;
+
+	& span {
+		position: relative;
+	}
+`;
+
 const ShowCase = styled.div`
 	display: flex;
-	width: 60%;
+	width: 90%;
 	margin: 0 auto;
 	justify-content: space-around;
-	background: red;
+	margin-top: 40px;
+	// background: red;
 	align-items: center;
 `;
 
@@ -69,27 +88,44 @@ const GithubImage = styled.img`
 `;
 
 const LaptopImg = styled.img`
-	width: 600px;
+	width: 800px;
 	src: url(${props => props.src});
 `;
 
 const Hero = styled.div`
 	width: 60%;
-	background: yellow;
+	// background: yellow;
 	margin: 0 auto;
-
 	& h1 {
 		text-align: center;
 	}
+	& > h3 {
+		text-align: center;
+		font-family: 'Overpass', sans-serif;
+		font-weight: 600;
+		font-size: 1.8rem;
+		color: #0ed8b2;
+	}
+`;
+
+const LogoImg = styled.img`
+	src: ${props => props.src};
+	left: -100px;
+	position: absolute;
 `;
 
 const UnorderedList = styled.ul`
 	display: flex;
 	font-size: 30px;
 	list-style-type: none;
-	justify-content: space-between;
-	width: 50%;
 	// background: green;
+
+	& > li > a {
+		font-family: 'Overpass', sans-serif;
+		font-weight: 900;
+		font-size: 1.5rem;
+		margin-right: 2rem;
+	}
 `;
 
 const Footer = styled.footer`
@@ -98,13 +134,33 @@ const Footer = styled.footer`
 `;
 
 const GetStartedSpan = styled.span`
-	transform: rotate(-20deg);
-	padding: 20px;
-	background: green;
+	padding: 10px 30px;
+	// background: green;
+	border: 5px solid #9800d0;
+	transform: skewX(10deg) rotate(-10deg);
 `;
 
 const GetStartedButton = styled.button`
-	transform: rotate(20deg);
+	transform: skewX(-10deg) rotate(10deg);
+	position: relative;
+	left: 1rem;
+	font-family: 'Overpass', sans-serif;
+	font-weight: 900;
+	font-size: 2rem;
+	border: none;
+	background: none;
+	color: #9800d0;
+`;
+
+const FixedBottomBG = styled.div`
+	z-index: -1;
+	position: absolute;
+	width: 150vw;
+	height: 50vw;
+	bottom: -30vw;
+	background: #0ed8b2;
+	opacity: 0.2;
+	transform: rotate(-5deg);
 `;
 
 class Landing extends PureComponent {
@@ -138,20 +194,28 @@ class Landing extends PureComponent {
 	render() {
 		const menuItems = [
 			{
-				name: 'feature1',
-				href: '/#'
+				name: 'Like my work? hire me.',
+				href: '/#',
+				styles: {
+					borderBottom: '5px solid #9800D0'
+				}
 			},
 			{
-				name: 'feature2',
-				href: '/#'
+				name: 'resources.',
+				href: '/#',
+				styles: {}
 			},
 			{
-				name: 'feature3',
-				href: '/#'
+				name: 'support.',
+				href: '/#',
+				styles: {}
 			},
 			{
-				name: 'feature4',
-				href: '/#'
+				name: 'v1.0.0',
+				href: '/#',
+				styles: {
+					borderBottom: '5px solid #000'
+				}
 			}
 		];
 		return (
@@ -210,7 +274,7 @@ class Landing extends PureComponent {
 							{menuItems.map((item, index) => {
 								return (
 									<li key={name}>
-										<A href={item.href} css={topLinks}>
+										<A href={item.href} style={item.styles}>
 											{item.name}
 										</A>
 									</li>
@@ -220,12 +284,15 @@ class Landing extends PureComponent {
 						<GithubImage src={github2} alt="fork this project" />
 					</Header>
 					<Hero>
-						<h1>
-							<img src={logo} alt="laptop image with animating code" />
-							snippet
-						</h1>
+						<HeroSection1>
+							<span>
+								<LogoImg src={logo} alt="laptop image with animating code" />
+								snippet
+							</span>
+						</HeroSection1>
 						<h3>
-							Create minimal code snippet snapshots with variety of customizations available .
+							Create minimal code snippet snapshots <br /> with variety of customizations &
+							languages available .
 						</h3>
 					</Hero>
 					<ShowCase>
@@ -238,6 +305,7 @@ class Landing extends PureComponent {
 				<Footer>
 					<p>Made by @himanshuc3</p>
 				</Footer>
+				<FixedBottomBG />
 			</Container>
 		);
 	}
