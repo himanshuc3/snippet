@@ -2,6 +2,9 @@ import { css } from '@emotion/core';
 
 const screen_sizes = {
 	mac: 1440,
+	transitionIntoKb: 1210,
+	kilobyte: 1024,
+	tablet: 768,
 	phone: 300
 };
 

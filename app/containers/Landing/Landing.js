@@ -4,7 +4,7 @@ import { css } from '@emotion/core';
 import { Redirect } from 'react-router';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { A, theme } from '../../styles/index';
+import { A, theme, media } from '../../styles/index';
 import Header from '../../components/Landing/Header/Header';
 import Hero from '../../components/Landing/Hero/Hero';
 import github from '../../assets/github.svg';
@@ -14,13 +14,20 @@ import Preview from '../../components/Preview/Preview';
 import github2 from '../../assets/forkmegithub.svg';
 
 // CSS Starting ----
+
+const OuterMostContainer = styled.div`
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+`;
 const Container = styled.div`
 	// background: black;
 	width: 100vw;
 	height: 100vh;
 	position: relative;
 	display: flex;
-	overflow-y: hidden;
+	overflow-y: scroll;
 	flex-direction: column;
 `;
 
@@ -32,6 +39,7 @@ const Content = styled.div`
 	flex: 1 0 auto;
 `;
 
+// TO-DO: Media query templates not working
 const ShowCase = styled.div`
 	display: flex;
 	width: 90%;
@@ -40,11 +48,26 @@ const ShowCase = styled.div`
 	margin-top: 40px;
 	// background: red;
 	align-items: center;
+
+	@media (max-width: 1210px) {
+		width: 100%;
+	}
+	@media (max-width: 1024px) {
+		width: 90%;
+		flex-direction: column;
+	}
 `;
 
 const LaptopImg = styled.img`
 	width: 800px;
 	src: url(${props => props.src});
+
+	@media (max-width: 1210px) {
+		width: 50%;
+	}
+	@media (max-width: 1024px) {
+		width: 750px;
+	}
 `;
 
 const Footer = styled.footer`
@@ -52,23 +75,36 @@ const Footer = styled.footer`
 	text-align: center;
 `;
 
-const GetStartedSpan = styled.span`
-	padding: 10px 30px;
-	// background: green;
-	border: 5px solid #9800d0;
-	transform: skewX(10deg) rotate(-10deg);
-`;
-
 const GetStartedButton = styled.button`
-	transform: skewX(-10deg) rotate(10deg);
+	transform: skewX(10deg) rotate(-10deg);
+	border: 5px solid #9800d0;
+	padding: 10px 30px;
 	position: relative;
 	left: 1rem;
 	font-family: 'Overpass', sans-serif;
 	font-weight: 900;
-	font-size: 2rem;
-	border: none;
+	font-size: ${theme.fontSize.large};
+	// border: none;
 	background: none;
 	color: #9800d0;
+	transition: ${theme.transition};
+
+	&:hover {
+		background: ${theme.colors.primary};
+		color: white;
+		cursor: pointer;
+	}
+
+	@media (max-width: 1024px) {
+		margin: 40px 0;
+	}
+`;
+
+const GetStartedSpan = styled.span`
+	display: inline-block;
+	transform: skewX(-10deg) rotate(10deg);
+	padding: 10px 30px;
+	// background: green;
 `;
 
 const FixedBottomBG = styled.div`
@@ -103,6 +139,10 @@ class Landing extends PureComponent {
 		});
 	};
 
+	goToEditor = () => {
+		this.props.history.push('/main');
+	};
+
 	handleKeyEvent = e => {
 		console.log(e);
 		let { charCode } = e;
@@ -113,35 +153,36 @@ class Landing extends PureComponent {
 
 	render() {
 		return (
-			<Container>
-				<Helmet>
-					{/* <meta charSet="utf-8" /> */}
-					{/* <title>Snippet | Minimal Screenshots for code.</title> */}
-					<meta
-						name="description"
-						content="Take minimal screenshots of code with different flavours of font, background and themes. Instagram code pics."
-					/>
-					{/* Full screen view of website on mobile. */}
-					<meta name="apple-mobile-web-app-capable" content="yes" />
-					<meta name="apple-mobile-web-app-title" content="Snippet" />
-					{/* Facebok opengraph tags */}
-					<meta property="og:url" content="www.snippet.com" />
-					<meta property="og:type" content="website" />
-					<meta property="og:title" content="Minimal screenshots of code." />
-					<meta property="og:image" content="imagelink" />
-					{/* 1200*630 */}
-					<meta property="og:image:type" content="image/jpeg" />
-					<meta property="og:image:width" content="500" />
-					<meta property="og:image:height" content="400" />
+			<OuterMostContainer>
+				<Container>
+					<Helmet>
+						{/* <meta charSet="utf-8" /> */}
+						{/* <title>Snippet | Minimal Screenshots for code.</title> */}
+						<meta
+							name="description"
+							content="Take minimal screenshots of code with different flavours of font, background and themes. Instagram code pics."
+						/>
+						{/* Full screen view of website on mobile. */}
+						<meta name="apple-mobile-web-app-capable" content="yes" />
+						<meta name="apple-mobile-web-app-title" content="Snippet" />
+						{/* Facebok opengraph tags */}
+						<meta property="og:url" content="www.snippet.com" />
+						<meta property="og:type" content="website" />
+						<meta property="og:title" content="Minimal screenshots of code." />
+						<meta property="og:image" content="imagelink" />
+						{/* 1200*630 */}
+						<meta property="og:image:type" content="image/jpeg" />
+						<meta property="og:image:width" content="500" />
+						<meta property="og:image:height" content="400" />
 
-					{/* Twitter cards */}
-					<meta name="twitter:card" content="summary_large_image" />
-					<meta name="twitter:site" content="@Snippet" />
-					<meta name="twitter:creator" content="@HimanshuChhabra" />
-					{/* 560*300 */}
-					<meta name="twitter:image" content="imageLink" />
-					{/* Schema breadcrumb on google. TO-DO. failed to compile. */}
-					{/* <script type="application/ld+json">
+						{/* Twitter cards */}
+						<meta name="twitter:card" content="summary_large_image" />
+						<meta name="twitter:site" content="@Snippet" />
+						<meta name="twitter:creator" content="@HimanshuChhabra" />
+						{/* 560*300 */}
+						<meta name="twitter:image" content="imageLink" />
+						{/* Schema breadcrumb on google. TO-DO. failed to compile. */}
+						{/* <script type="application/ld+json">
 					{
 					"@context": "https://schema.org",
 					"@type": "BreadcrumbList",
@@ -158,25 +199,26 @@ class Landing extends PureComponent {
 					}]
 					}
 					</script> */}
-				</Helmet>
-				<Modal show={this.state.show} modalClose={this.toggleModal}>
-					<Preview />
-				</Modal>
-				<Content>
-					<Header />
-					<Hero />
-					<ShowCase>
-						<LaptopImg src={laptop} />
-						<GetStartedSpan>
-							<GetStartedButton onClick={this.toggleModal}>Get Started</GetStartedButton>
-						</GetStartedSpan>
-					</ShowCase>
-				</Content>
-				<Footer>
-					<p>Made by @himanshuc3</p>
-				</Footer>
+					</Helmet>
+					<Modal show={this.state.show} modalClose={this.toggleModal}>
+						<Preview />
+					</Modal>
+					<Content>
+						<Header />
+						<Hero />
+						<ShowCase>
+							<LaptopImg src={laptop} />
+							<GetStartedButton onClick={this.goToEditor}>
+								<GetStartedSpan>Get Started</GetStartedSpan>
+							</GetStartedButton>
+						</ShowCase>
+					</Content>
+					<Footer>
+						<p>Made by @himanshuc3</p>
+					</Footer>
+				</Container>
 				<FixedBottomBG />
-			</Container>
+			</OuterMostContainer>
 		);
 	}
 }

@@ -5,5 +5,6 @@ import theme from './theme';
 import UL from './UL';
 import reset from './reset';
 import A from './A';
+import media from './media_template';
 
-export { theme, UL, reset, A };
+export { theme, UL, reset, A, media };

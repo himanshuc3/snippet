@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import html2canvas from 'html2canvas';
+import domToImage from 'dom-to-image';
 import heartLogo from '../../assets/heart.svg';
 import downloadLogo from '../../assets/download.svg';
 import { changeOption } from '../../store/actions/option';
@@ -15,9 +16,12 @@ class Menu extends Component {
 	};
 
 	handleCanvasDownload = () => {
-		return html2canvas(document.getElementsByClassName('editor-display')[0]).then(canvas => {
-			document.getElementById('showcanvas').innerHTML = '';
-			document.getElementById('showcanvas').append(canvas);
+		// return html2canvas(document.getElementsByClassName('editor-display')[0]).then(canvas => {
+		// 	document.getElementById('showcanvas').innerHTML = '';
+		// 	document.getElementById('showcanvas').append(canvas);
+		// });
+		domToImage.toPng(document.getElementsByClassName('editor-display')[0]).then(dataUrl => {
+			console.log(dataUrl);
 		});
 	};
 

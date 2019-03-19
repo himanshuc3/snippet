@@ -18,6 +18,9 @@ const Hero = styled.div`
 		font-size: ${theme.fontSize.large};
 		color: ${theme.colors.secondary};
 	}
+	@media (max-width: 1024px) {
+		width: 70%;
+	}
 `;
 
 const HeroSection1 = styled.section`
@@ -57,8 +60,7 @@ const _Hero = props => {
 				</span>
 			</HeroSection1>
 			<h3>
-				Create minimal code snippet snapshots <br /> with variety of customizations & languages
-				available .
+				Create minimal code snippet snapshots with variety of customizations & languages available.
 			</h3>
 		</Hero>
 	);

@@ -24,6 +24,10 @@ const UnorderedList = styled.ul`
 		font-weight: 900;
 		font-size: ${theme.fontSize.small};
 		margin-right: 5rem;
+
+		@media (max-width: 1024px) {
+			font-size: ${theme.fontSize.xsmall};
+		}
 	}
 `;
 
