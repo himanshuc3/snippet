@@ -1,1 +1,2 @@
 export const CHANGE_OPTION = 'CHANGE_OPTION';
+export const SET_EDITOR_CONFIG = 'SET_EDITOR_CONFIG';

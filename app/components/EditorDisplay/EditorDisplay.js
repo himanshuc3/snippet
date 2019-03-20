@@ -9,13 +9,19 @@ import { theme } from '../../styles';
 
 // CSS starts---
 const Wrapper = styled.div`
+	width: 80%;
+	margin: 20px auto;
+
+	// background: red;
+`;
+
+const ImageContainer = styled.div`
+	width: 100%;
 	display: flex;
 	justify-content: center;
-	width: 80%;
-	margin: 0 auto;
-	margin-top: 20px;
+	background: yellow;
 	padding: 20px 0;
-	background: red;
+	border-radius: 5px;
 `;
 
 const TopBar = styled.div`
@@ -61,7 +67,7 @@ var styles = {
 	display: 'inline-block',
 	width: '100%',
 	fontSize: theme.fontSize.xsmall,
-	fontWeight: 700
+	borderRadius: '5px'
 };
 // CSS ends---
 
@@ -70,26 +76,26 @@ class EditorDisplay extends React.Component {
 		super(props);
 		this.state = {
 			code: `
-        // Set variables
-        var output = "";
+// Set variables
+var output = "";
 
-        // Outer loop
-        for (i = 1; i <= 10; i++) {
+// Outer loop
+for (i = 1; i <= 10; i++) {
 
-            output += "<h1>" + i + " times table</h1>";
-            output += "<ul>";
+	output += "<h1>" + i + " times table</h1>";
+	output += "<ul>";
 
-            // Inner loop
-            for (j = 1; j <= 10; j++) {
-                output += "<li>" + j + " x " + i + " = " + j * i;
-            }
+	// Inner loop
+	for (j = 1; j <= 10; j++) {
+		output += "<li>" + j + " x " + i + " = " + j * i;
+	}
 
-            output += "</ul>";
+	output += "</ul>";
 
-        }
+}
 
-        // Output results to the above HTML element
-        document.getElementById("msg").innerHTML = output;
+// Output results to the above HTML element
+document.getElementById("msg").innerHTML = output;
         `
 		};
 	}
@@ -100,27 +106,31 @@ class EditorDisplay extends React.Component {
 
 	render() {
 		return (
-			<Wrapper>
-				<WrapperWindow>
-					<TopBar>
-						<span />
-						<span />
-						<span />
-					</TopBar>
-					{/* <WrapperEditor> */}
-					<AceEditor
-						mode="javascript"
-						theme="default"
-						name="editor"
-						editorProps={{ $blockScrolling: true }}
-						style={styles}
-						className="editor-display"
-						showGutter={false}
-						showPrintMargin={false}
-						onLoad={this.onLoad}
-					/>
-					{/* </WrapperEditor> */}
-				</WrapperWindow>
+			<Wrapper className="editor-display-wrapper">
+				<ImageContainer>
+					<WrapperWindow>
+						<TopBar>
+							<span />
+							<span />
+							<span />
+						</TopBar>
+						{/* <WrapperEditor> */}
+						<AceEditor
+							mode="javascript"
+							theme="default"
+							name="editor"
+							value={this.state.code}
+							editorProps={{ $blockScrolling: true }}
+							style={styles}
+							className="editor-display"
+							showGutter={false}
+							showPrintMargin={false}
+							wrapEnabled={true}
+							onLoad={this.onLoad}
+						/>
+						{/* </WrapperEditor> */}
+					</WrapperWindow>
+				</ImageContainer>
 			</Wrapper>
 		);
 	}

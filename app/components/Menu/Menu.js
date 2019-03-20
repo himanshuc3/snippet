@@ -57,11 +57,8 @@ class Menu extends Component {
 	};
 
 	handleCanvasDownload = () => {
-		// return html2canvas(document.getElementsByClassName('editor-display')[0]).then(canvas => {
-		// 	document.getElementById('showcanvas').innerHTML = '';
-		// 	document.getElementById('showcanvas').append(canvas);
-		// });
-		domToImage.toBlob(document.getElementsByClassName('editor-display')[0]).then(blob => {
+		domToImage.toBlob(document.getElementsByClassName('editor-display-wrapper')[0]).then(blob => {
+			console.log(blob);
 			saveAs(blob, 'artboard.png');
 		});
 	};

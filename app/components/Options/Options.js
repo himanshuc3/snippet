@@ -7,10 +7,12 @@ const Wrapper = styled.div`
 	display: flex;
 	padding: 10px 5%;
 	background: ${theme.colors.brownish};
+	align-items: center;
 
 	& > h1{
 		font-size: 5rem;
 		font-family: ${theme.fonts.title};
+		margin-right: 40px;
 		// color: white;
 		// -webkit-text-fill-color: ${theme.colors.brownish};
 		// -webkit-text-stroke-width: 2px;
