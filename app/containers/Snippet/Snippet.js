@@ -3,10 +3,6 @@ import { connect } from 'react-redux';
 import styled from '@emotion/styled';
 import AceEditor from 'react-ace';
 import PropTypes from 'prop-types';
-import brace from 'brace';
-import 'brace/mode/javascript';
-import 'brace/theme/monokai';
-import 'brace/mode/jsx';
 
 import { theme } from '../../styles';
 import Logo from '../../assets/logo.svg';

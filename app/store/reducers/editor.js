@@ -2,7 +2,7 @@ import { SET_EDITOR_CONFIG } from '../actions/actionTypes';
 
 const initialState = {
 	fontSize: '12px',
-	language: 'Javascript',
+	language: 'javascript',
 	theme: 'default',
 	background: 'yellow'
 };

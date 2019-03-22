@@ -1,5 +1,6 @@
 import React from 'react';
 import AceEditor from 'react-ace';
+import { connect } from 'react-redux';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import { theme } from '../../styles';
@@ -63,12 +64,6 @@ const WrapperWindow = styled.div`
 // 	background: white;
 // `
 
-var styles = {
-	display: 'inline-block',
-	width: '100%',
-	fontSize: theme.fontSize.xsmall,
-	borderRadius: '5px'
-};
 // CSS ends---
 
 class EditorDisplay extends React.Component {
@@ -105,9 +100,20 @@ document.getElementById("msg").innerHTML = output;
 	};
 
 	render() {
+		var styles = {
+			display: 'inline-block',
+			width: '100%',
+			fontSize: this.props.editor_options.fontSize,
+			borderRadius: '5px'
+		};
+
+		var imageStyle = {
+			background: this.props.editor_options.background
+		};
+
 		return (
 			<Wrapper className="editor-display-wrapper">
-				<ImageContainer>
+				<ImageContainer style={imageStyle}>
 					<WrapperWindow>
 						<TopBar>
 							<span />
@@ -116,8 +122,8 @@ document.getElementById("msg").innerHTML = output;
 						</TopBar>
 						{/* <WrapperEditor> */}
 						<AceEditor
-							mode="javascript"
-							theme="default"
+							mode={this.props.editor_options.language}
+							theme={this.props.editor_options.theme}
 							name="editor"
 							value={this.state.code}
 							editorProps={{ $blockScrolling: true }}
@@ -136,4 +142,13 @@ document.getElementById("msg").innerHTML = output;
 	}
 }
 
-export default EditorDisplay;
+const mapStateToProps = state => {
+	return {
+		editor_options: state.editor
+	};
+};
+
+export default connect(
+	mapStateToProps,
+	null
+)(EditorDisplay);
