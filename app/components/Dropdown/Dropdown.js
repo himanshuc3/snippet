@@ -6,7 +6,6 @@ import { setEditorConfig } from '../../store/actions/editor';
 const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	// background: red;
 	height: 100%;
 

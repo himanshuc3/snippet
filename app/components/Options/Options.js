@@ -5,25 +5,9 @@ import { theme } from '../../styles';
 
 const Wrapper = styled.div`
 	display: flex;
-	padding: 10px 5%;
-	background: ${theme.colors.brownish};
-	align-items: center;
-
-	& > h1{
-		font-size: 5rem;
-		font-family: ${theme.fonts.title};
-		margin-right: 40px;
-		// color: white;
-		// -webkit-text-fill-color: ${theme.colors.brownish};
-		// -webkit-text-stroke-width: 2px;
-		// -webkit-text-stroke-color: white;
-		color: ${theme.colors.brownish};
-		text-shadow:
-   -1px -1px 0 #fff,  
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-     1px 1px 0 #fff;
-	}
+	// border: 1px solid orange;
+	background: rgb(41, 48, 57);
+	width: 20%;
 `;
 
 class Options extends Component {
@@ -33,11 +17,10 @@ class Options extends Component {
 	}
 
 	render() {
-		let ActiveOptionComponent = this.props.options[this.props.activeOption];
+		let ActiveOptionComponent = this.props.options[this.props.activeOption].cmp;
 		console.log(this.props.activeOption);
 		return (
 			<Wrapper>
-				<h1>OPTIONS</h1>
 				<ActiveOptionComponent />
 			</Wrapper>
 		);

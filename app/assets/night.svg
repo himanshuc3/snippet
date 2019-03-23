@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Night Mode</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.5,27 C6.04415588,27 0,20.9558441 0,13.5 C0,6.04415588 6.04415588,0 13.5,0 C20.9558441,0 27,6.04415588 27,13.5 C27,20.9558441 20.9558441,27 13.5,27 Z M13.5,2.7 L13.5,24.3 C19.4646753,24.3 24.3,19.4646753 24.3,13.5 C24.3,7.5353247 19.4646753,2.7 13.5,2.7 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dashboard-2-copy" transform="translate(-144.000000, -23.000000)">
+            <g id="Night-Mode" transform="translate(144.000000, 23.000000)">
+                <rect id="Surface" x="0" y="0" width="27" height="27"></rect>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use fill="#1F1F1F" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

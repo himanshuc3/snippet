@@ -3,7 +3,9 @@ const theme = {
 		primary: '#9800D0',
 		secondary: '#0ED8B2',
 		blackShade: '#242424',
-		brownish: '#3E3E3E'
+		brownish: '#3E3E3E',
+		facebook: '#39539D',
+		twitter: '#009CF9'
 	},
 	fonts: {
 		title: 'Fira Sans Condensed, Helvetica Neue, sans-serif',

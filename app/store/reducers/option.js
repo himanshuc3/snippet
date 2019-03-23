@@ -4,13 +4,30 @@ import Language from '../../components/Options/Language/Language';
 import Editor from '../../components/Options/Editor/Editor';
 import Background from '../../components/Options/Background/Background';
 
+import fontLogo from '../../assets/font.svg';
+import paletteLogo from '../../assets/pallete.svg';
+import dotsLogo from '../../assets/dots.svg';
+import languageLogo from '../../assets/language.svg';
+
 const initialState = {
-	activeOption: 'font',
+	activeOption: 'Font',
 	options: {
-		font: Font,
-		language: Language,
-		editor: Editor,
-		background: Background
+		Font: {
+			cmp: Font,
+			src: fontLogo
+		},
+		Language: {
+			cmp: Language,
+			src: languageLogo
+		},
+		Bkground: {
+			cmp: Background,
+			src: paletteLogo
+		},
+		Editor: {
+			cmp: Editor,
+			src: dotsLogo
+		}
 	}
 };
 

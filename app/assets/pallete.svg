@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>outline-color_lens-24px</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dashboard-2-copy" transform="translate(-33.000000, -369.000000)">
+            <g id="outline-color_lens-24px" transform="translate(30.000000, 365.000000)">
+                <polygon id="Path" points="0 0 43 0 43 43 0 43"></polygon>
+                <path d="M21,40 C11.082,40 3,31.918 3,22 C3,12.082 11.082,4 21,4 C30.918,4 39,11.272 39,20.2 C39,26.158 34.158,31 28.2,31 L25.014,31 C24.51,31 24.114,31.396 24.114,31.9 C24.114,32.116 24.204,32.314 24.348,32.494 C25.086,33.34 25.5,34.402 25.5,35.5 C25.5,37.984 23.484,40 21,40 Z M21,7.6 C13.062,7.6 6.6,14.062 6.6,22 C6.6,29.938 13.062,36.4 21,36.4 C21.504,36.4 21.9,36.004 21.9,35.5 C21.9,35.212 21.756,34.996 21.648,34.87 C20.91,34.042 20.514,32.98 20.514,31.9 C20.514,29.416 22.53,27.4 25.014,27.4 L28.2,27.4 C32.178,27.4 35.4,24.178 35.4,20.2 C35.4,13.252 28.938,7.6 21,7.6 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+                <circle id="Oval" fill="#FFFFFF" cx="12" cy="21" r="3"></circle>
+                <circle id="Oval" fill="#FFFFFF" cx="17" cy="13" r="3"></circle>
+                <circle id="Oval" fill="#FFFFFF" cx="26" cy="13" r="3"></circle>
+                <circle id="Oval" fill="#FFFFFF" cx="31" cy="21" r="3"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

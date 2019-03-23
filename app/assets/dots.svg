@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="7px" viewBox="0 0 29 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>outline-more_horiz-24px</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dashboard-2-copy" transform="translate(-37.000000, -493.000000)">
+            <g id="outline-more_horiz-24px" transform="translate(30.000000, 475.000000)">
+                <polygon id="Path" points="0 0 43 0 43 43 0 43"></polygon>
+                <path d="M10.625,18 C8.63125,18 7,19.575 7,21.5 C7,23.425 8.63125,25 10.625,25 C12.61875,25 14.25,23.425 14.25,21.5 C14.25,19.575 12.61875,18 10.625,18 Z M32.375,18 C30.38125,18 28.75,19.575 28.75,21.5 C28.75,23.425 30.38125,25 32.375,25 C34.36875,25 36,23.425 36,21.5 C36,19.575 34.36875,18 32.375,18 Z M21.5,18 C19.50625,18 17.875,19.575 17.875,21.5 C17.875,23.425 19.50625,25 21.5,25 C23.49375,25 25.125,23.425 25.125,21.5 C25.125,19.575 23.49375,18 21.5,18 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

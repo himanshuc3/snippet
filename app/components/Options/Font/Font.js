@@ -3,7 +3,10 @@ import styled from '@emotion/styled';
 import Dropdown from '../../Dropdown/Dropdown';
 
 const Wrapper = styled.div`
-	// background: green;
+	// background: yellow;
+	display: flex;
+	width: 100%;
+	justify-content: center;
 	// height: 70px;
 	color: white;
 `;

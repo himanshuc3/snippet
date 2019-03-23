@@ -21,7 +21,6 @@ const ImageContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	background: yellow;
-	padding: 20px 0;
 	border-radius: 5px;
 `;
 
@@ -56,7 +55,9 @@ const TopBar = styled.div`
 `;
 
 const WrapperWindow = styled.div`
-	width: 80%;
+	width: 100%;
+	padding: 40px;
+	padding-bottom: 34px;
 `;
 
 // const WrapperEditor = styled.div`
@@ -112,8 +113,8 @@ document.getElementById("msg").innerHTML = output;
 		};
 
 		return (
-			<Wrapper className="editor-display-wrapper">
-				<ImageContainer style={imageStyle}>
+			<Wrapper style={{ ...this.props.style }}>
+				<ImageContainer style={imageStyle} className="editor-display-wrapper">
 					<WrapperWindow>
 						<TopBar>
 							<span />
@@ -133,6 +134,7 @@ document.getElementById("msg").innerHTML = output;
 							showPrintMargin={false}
 							wrapEnabled={true}
 							onLoad={this.onLoad}
+							maxLines={Infinity}
 						/>
 						{/* </WrapperEditor> */}
 					</WrapperWindow>
