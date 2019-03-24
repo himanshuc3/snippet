@@ -196,7 +196,7 @@ class Snippet extends Component {
 						</EditorAndFooter>
 					</MainPanel>
 				</Main>
-				<EditorDisplay style={{ position: 'absolute', top: '-100vh', minWidth: '1920px' }} />
+				{/* <EditorDisplay style={{ position: 'absolute', top: '-100vh', minWidth: '1920px' }} /> */}
 			</Wrapper>
 		);
 	}

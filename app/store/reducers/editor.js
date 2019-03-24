@@ -1,7 +1,7 @@
 import { SET_EDITOR_CONFIG } from '../actions/actionTypes';
 
 const initialState = {
-	fontSize: '12px',
+	fontSize: 24,
 	language: 'javascript',
 	theme: 'default',
 	background: 'yellow'

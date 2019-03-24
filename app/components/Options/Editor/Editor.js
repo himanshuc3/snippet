@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Dropdown from '../../Dropdown/Dropdown';
+import CustomDropdown from '../../CustomDropdown/CustomDropdown';
 
 import 'brace/theme/github';
 import 'brace/theme/chrome';

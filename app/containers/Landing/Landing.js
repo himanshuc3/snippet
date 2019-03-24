@@ -10,7 +10,9 @@ import Hero from '../../components/Landing/Hero/Hero';
 import github from '../../assets/github.svg';
 import laptop from '../../assets/laptop.svg';
 import Modal from '../../components/Modal/Modal';
+import arrowRight from '../../assets/arrow_right.svg';
 import Preview from '../../components/Preview/Preview';
+import Footer from '../../components/Footer/Footer';
 import github2 from '../../assets/forkmegithub.svg';
 
 // CSS Starting ----
@@ -70,29 +72,31 @@ const LaptopImg = styled.img`
 	}
 `;
 
-const Footer = styled.footer`
-	flex-shrink: 0;
-	text-align: center;
-`;
+// const Footer = styled.footer`
+// 	flex-shrink: 0;
+// 	text-align: center;
+// `;
 
 const GetStartedButton = styled.button`
-	transform: skewX(10deg) rotate(-10deg);
-	border: 5px solid #9800d0;
-	padding: 10px 30px;
-	position: relative;
-	left: 1rem;
+	background: none;
+	border: 0;
+	border-radius: 5px;
+	background: ${theme.colors.primary};
 	font-family: 'Overpass', sans-serif;
 	font-weight: 900;
-	font-size: ${theme.fontSize.large};
-	// border: none;
-	background: none;
-	color: #9800d0;
+	font-size: ${theme.fontSize.medium};
+	color: white;
 	transition: ${theme.transition};
 
 	&:hover {
 		background: ${theme.colors.primary};
 		color: white;
 		cursor: pointer;
+		background: ${theme.colors.blackShade};
+
+		& > span > img {
+			// padding-right: 10px;
+		}
 	}
 
 	@media (max-width: 1024px) {
@@ -102,9 +106,27 @@ const GetStartedButton = styled.button`
 
 const GetStartedSpan = styled.span`
 	display: inline-block;
-	transform: skewX(-10deg) rotate(10deg);
 	padding: 10px 30px;
 	// background: green;
+	transition: ${theme.transition};
+
+	& > img {
+		transition: ${theme.transition};
+		padding-left: 10px;
+	}
+`;
+
+const ContinueToAppButton = styled.div`
+	display: flex;
+	flex-direction: column;
+
+	& > span {
+		margin-top: 10px;
+		font-family: ${theme.fonts.para};
+		font-weight: 200;
+		font-size: ${theme.fontSize.xsmall};
+		color: ${theme.colors.primary};
+	}
 `;
 
 const FixedBottomBG = styled.div`
@@ -208,14 +230,17 @@ class Landing extends PureComponent {
 						<Hero />
 						<ShowCase>
 							<LaptopImg src={laptop} />
-							<GetStartedButton onClick={this.goToEditor}>
-								<GetStartedSpan>Get Started</GetStartedSpan>
-							</GetStartedButton>
+							<ContinueToAppButton>
+								<GetStartedButton onClick={this.goToEditor}>
+									<GetStartedSpan>
+										Get Started <img src={arrowRight} />
+									</GetStartedSpan>
+								</GetStartedButton>
+								<span>Or press space to continue 🚀</span>
+							</ContinueToAppButton>
 						</ShowCase>
 					</Content>
-					<Footer>
-						<p>Made by @himanshuc3</p>
-					</Footer>
+					<Footer />
 				</Container>
 				<FixedBottomBG />
 			</OuterMostContainer>

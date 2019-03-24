@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from '@emotion/styled';
 import { connect } from 'react-redux';
-import Dropdown from '../../Dropdown/Dropdown';
+import CustomDropdown from '../../CustomDropdown/CustomDropdown';
 import { SketchPicker } from 'react-color';
 import { setEditorConfig } from '../../../store/actions/editor';
 

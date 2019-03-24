@@ -15,6 +15,7 @@ const theme = {
 		xxsmall: '0.75rem', // 12px
 		xsmall: '1rem', // 16px
 		small: '1.25rem', // 20px,
+		medium: '1.5rem', // 24px
 		large: '1.8125rem' // 29px
 	},
 	borderRadius: '5px',

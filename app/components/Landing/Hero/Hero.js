@@ -14,9 +14,16 @@ const Hero = styled.div`
 	& > h3 {
 		text-align: center;
 		font-family: ${theme.fonts.para};
-		font-weight: 700;
-		font-size: ${theme.fontSize.large};
-		color: ${theme.colors.secondary};
+		font-weight: 500;
+		// font-size: ${theme.fontSize.large};
+		font-size: ${theme.fontSize.medium};
+		color: ${theme.colors.blackShade};
+	}
+
+	& > h3 > span{
+		font-weight: 900;
+		border-bottom: 2px solid ${theme.colors.blackShade};
+		border-style: dashed; 
 	}
 	@media (max-width: 1024px) {
 		width: 70%;
@@ -41,11 +48,11 @@ const HeroSection1 = styled.section`
 
 const LogoImg = styled.img`
 	src: ${props => props.src};
-	left: -100px;
+	left: -50px;
 	position: absolute;
 	top: 50%;
 	height: 50px;
-	transform: translateY(-50%);
+	transform: translateY(-40%);
 `;
 
 // CSS end ---
@@ -60,7 +67,8 @@ const _Hero = props => {
 				</span>
 			</HeroSection1>
 			<h3>
-				Create minimal code snippet snapshots with variety of customizations & languages available.
+				Create 🤩 <span>minimal</span> code snippet snapshots with diverse programming 🌐{' '}
+				<span>languages</span>, theming options and <span>offline</span> 👀 capabilities.
 			</h3>
 		</Hero>
 	);
