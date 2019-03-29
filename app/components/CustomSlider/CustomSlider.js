@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import compose from 'recompose/compose';
 import styled from '@emotion/styled';
 import { withStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/lab/Slider';
@@ -86,7 +87,10 @@ const mapDispatchToProps = dispatch => {
 
 // TO-DO: withstyles not working
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(withStyles(styless)(CustomSlider));
+export default compose(
+	withStyles(styless),
+	connect(
+		mapStateToProps,
+		mapDispatchToProps
+	)
+)(CustomSlider);
