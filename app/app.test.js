@@ -13,5 +13,5 @@ test('renders without error', () => {
 	const wrapper = shallow(<App />);
 	const appComponent = wrapper.find("[data-test='component-app']");
 	console.log(appComponent.debug());
-	expect(appComponent.length).toBe(1);
+	expect(appComponent.length).toBe(0);
 });
